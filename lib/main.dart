@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Welcome to Manager System',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.light().copyWith(),
+        // theme: ThemeData.light().copyWith(),
         initialRoute: LoginScreen.id,
         routes: {
           LoginScreen.id: (context) => LoginScreen(),
