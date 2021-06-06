@@ -18,11 +18,11 @@ class _StaffHomePageState extends State<StaffHomePage> {
   User loggedInUser;
   String email;
 
-  @override
-  void initState() {
-    super.initState();
-    getCurrentUser();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // getCurrentUser();
+  // }
 
   Future<void> getCurrentUser() async {
     try {
@@ -49,7 +49,7 @@ class _StaffHomePageState extends State<StaffHomePage> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             child: Text(
-              'Chat with lecturer',
+              'Discussion Room',
               style: TextStyle(
                 color: Color(0xff009bff),
                 fontSize: 18,

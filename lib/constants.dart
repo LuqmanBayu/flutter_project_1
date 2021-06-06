@@ -26,3 +26,9 @@ const kStyleSendButton = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 20.0,
 );
+
+const kStyleHomePageButtons = TextStyle(
+  color: Color(0xff009bff),
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
+);

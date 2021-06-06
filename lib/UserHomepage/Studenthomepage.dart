@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_project_1/Features/ChatPage.dart';
 import 'package:flutter_project_1/Features/StudentProfile.dart';
 import 'package:flutter_project_1/LoginPage.dart';
+import 'package:flutter_project_1/constants.dart';
 
 class StudentHomePage extends StatefulWidget {
   static const id = 'student_page';
@@ -40,23 +41,44 @@ class _StudentHomePageState extends State<StudentHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, ChatPage.id);
-            },
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Discussion Room',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, ChatPage.id);
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.chat_bubble,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Discussion Room',
+                    textAlign: TextAlign.right,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -64,21 +86,44 @@ class _StudentHomePageState extends State<StudentHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('See Notification'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'See notification',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('notifications');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.notifications,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Notifications',
+                    textAlign: TextAlign.right,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -86,21 +131,44 @@ class _StudentHomePageState extends State<StudentHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Student Profile'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Student Profile',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.account_box,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Student Profile',
+                    textAlign: TextAlign.right,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -183,21 +251,29 @@ class _StudentHomePageState extends State<StudentHomePage> {
                             }
                           }),
                       SizedBox(height: 30),
-                      CircleAvatar(
-                        backgroundColor: Colors.red.shade100,
-                        radius: 50.0,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 70, top: 70),
-                          child: FloatingActionButton(
-                            backgroundColor: Colors.white,
-                            onPressed: () {
-                              print('pressed');
-                              Navigator.pushNamed(context, StudentProfile.id);
-                            },
-                            child: Icon(
-                              Icons.photo_camera,
-                              color: Colors.blueAccent,
-                              size: 17.0,
+                      Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: new Border.all(
+                            color: Colors.black54,
+                            width: 4.0,
+                          ),
+                        ),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey,
+                          radius: 50.0,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 70, top: 70),
+                            child: FloatingActionButton(
+                              backgroundColor: Colors.white,
+                              onPressed: () {
+                                Navigator.pushNamed(context, StudentProfile.id);
+                              },
+                              child: Icon(
+                                Icons.add_a_photo,
+                                color: Colors.blueAccent,
+                                size: 17.0,
+                              ),
                             ),
                           ),
                         ),
