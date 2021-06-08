@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_project_1/Features/ChatPage.dart';
-import '';
+import 'package:flutter_project_1/constants.dart';
 
 import 'package:flutter_project_1/LoginPage.dart';
 
@@ -18,11 +18,11 @@ class _StaffHomePageState extends State<StaffHomePage> {
   User loggedInUser;
   String email;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // getCurrentUser();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
 
   Future<void> getCurrentUser() async {
     try {
@@ -40,23 +40,44 @@ class _StaffHomePageState extends State<StaffHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, ChatPage.id);
-            },
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Discussion Room',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, ChatPage.id);
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.chat,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Discussion Room',
+                    textAlign: TextAlign.right,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -131,7 +152,7 @@ class _StaffHomePageState extends State<StaffHomePage> {
                                     TextSpan(
                                         text: 'Select Staff features',
                                         style: TextStyle(
-                                            color: Colors.yellow[300],
+                                            color: Colors.white,
                                             fontSize: 25,
                                             fontWeight: FontWeight.w800)),
                                   ],

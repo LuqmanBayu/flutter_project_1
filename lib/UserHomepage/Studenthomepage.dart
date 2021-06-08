@@ -63,7 +63,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Icon(
-                    Icons.chat_bubble,
+                    Icons.chat,
                     color: Colors.black,
                     size: 30,
                   ),

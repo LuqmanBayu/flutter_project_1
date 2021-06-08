@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_project_1/LoginPage.dart';
+import 'package:flutter_project_1/constants.dart';
 
 class AdminHomePage extends StatefulWidget {
   static const id = 'admin_page';
@@ -38,21 +39,44 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Manage Course'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Manage course',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.settings,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Manage Course',
+                    textAlign: TextAlign.left,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -60,21 +84,46 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Send Notification to lecturer'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Send notification to lecturer',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.notifications,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Send Notification to Lecturer',
+                      textAlign: TextAlign.left,
+                      style: kStyleHomePageButtons,
+                    ),
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -82,21 +131,46 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Send Notification to student'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Send notification to Student',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.notifications,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Send Notification to Student',
+                      textAlign: TextAlign.left,
+                      style: kStyleHomePageButtons,
+                    ),
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -104,21 +178,44 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Manage Student'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Manage Student',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.settings,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Manage Student',
+                    textAlign: TextAlign.left,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -126,21 +223,44 @@ class _AdminHomePageState extends State<AdminHomePage> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () => print('Pressed manage lecturer'),
-            elevation: 5,
-            padding: EdgeInsets.all(15),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: Text(
-              'Manage Lecturer',
-              style: TextStyle(
-                color: Color(0xff009bff),
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('student prof');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.settings,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Text(
+                    'Manage Lecturer',
+                    textAlign: TextAlign.left,
+                    style: kStyleHomePageButtons,
+                  ),
+                ],
               ),
             ),
-          )
+          ),
         ]);
   }
 
@@ -215,7 +335,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
                                     TextSpan(
                                         text: 'Select admin features',
                                         style: TextStyle(
-                                            color: Colors.yellow[300],
+                                            color: Colors.white,
                                             fontSize: 25,
                                             fontWeight: FontWeight.w800)),
                                   ],
@@ -224,11 +344,11 @@ class _AdminHomePageState extends State<AdminHomePage> {
                             }
                           }),
                       SizedBox(height: 30),
-                      buildManageCourse(),
+                      buildSendNotificationStudent(),
                       SizedBox(height: 15),
                       buildSendNotification(),
                       SizedBox(height: 15),
-                      buildSendNotificationStudent(),
+                      buildManageCourse(),
                       SizedBox(height: 15),
                       buildManageLecturer(),
                       SizedBox(height: 15),
