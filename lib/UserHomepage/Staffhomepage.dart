@@ -145,10 +145,7 @@ class _StaffHomePageState extends State<StaffHomePage> {
                                             fontWeight: FontWeight.w700)),
                                     TextSpan(
                                         text: documentFields['user'] + '\n\n',
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.bold)),
+                                        style: kStyleDefault),
                                     TextSpan(
                                         text: 'Select Staff features',
                                         style: TextStyle(

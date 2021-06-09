@@ -323,9 +323,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
                                   children: <TextSpan>[
                                     TextSpan(
                                         text: 'Logged in as user : ',
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w700)),
+                                        style: kStyleDefault),
                                     TextSpan(
                                         text: documentFields['user'] + '\n\n',
                                         style: TextStyle(

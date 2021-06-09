@@ -155,23 +155,45 @@ class _SignUpPageState extends State<SignUpPage> {
               setState(() {
                 showSpinner = true;
               });
-              _firestore.collection('users').doc(email).set({
-                'user': user,
-                'email': email,
-                'role': role,
-              });
+
               try {
                 final newUser = await _auth.createUserWithEmailAndPassword(
                     email: email, password: password);
 
                 if (newUser != null) {
+                  _firestore.collection('users').doc(email).set({
+                    'user': user,
+                    'email': email,
+                    'role': role,
+                  });
                   Navigator.pushNamed(context, StudentHomePage.id);
                 }
                 setState(() {
                   showSpinner = false;
                 });
               } catch (e) {
-                print(e);
+                String e2 = e.toString();
+                setState(() {
+                  showSpinner = false;
+                });
+                return ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      // 'Please Insert Valid Login Details',
+                      e2,
+                      textAlign: TextAlign.center,
+                    ),
+                    duration: const Duration(milliseconds: 4000),
+                    width: 280.0,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, // Inner padding for SnackBar content.
+                    ),
+                    behavior: SnackBarBehavior.floating,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                );
               }
               setState(() {
                 showSpinner = false;

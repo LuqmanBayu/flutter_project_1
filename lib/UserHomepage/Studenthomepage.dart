@@ -142,7 +142,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
             ]),
             child: RaisedButton(
               onPressed: () {
-                print('student prof');
+                Navigator.pushNamed(context, StudentProfile.id);
               },
               elevation: 5.0,
               padding: EdgeInsets.all(15),
@@ -164,6 +164,53 @@ class _StudentHomePageState extends State<StudentHomePage> {
                     'Student Profile',
                     textAlign: TextAlign.right,
                     style: kStyleHomePageButtons,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ]);
+  }
+
+  Widget buildChooseCourse() {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: 400,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.shade800,
+                blurRadius: 6,
+                offset: Offset(0, 2),
+              )
+            ]),
+            child: RaisedButton(
+              onPressed: () {
+                print('choose course');
+              },
+              elevation: 5.0,
+              padding: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.book,
+                    color: Colors.black,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 80,
+                  ),
+                  Expanded(
+                    child: Text(
+                      'Choose Course',
+                      textAlign: TextAlign.left,
+                      style: kStyleHomePageButtons,
+                    ),
                   ),
                 ],
               ),
@@ -233,11 +280,8 @@ class _StudentHomePageState extends State<StudentHomePage> {
                                     text: 'Logged in as user: ' + ' ',
                                     children: [
                                       TextSpan(
-                                        text: documentFields['user'],
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black54),
-                                      ),
+                                          text: documentFields['user'],
+                                          style: kStyleDefault),
                                       TextSpan(
                                           text: '\n\n' +
                                               'Please Select Student Privileges',
@@ -254,27 +298,17 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: new Border.all(
+                          border: Border.all(
                             color: Colors.black54,
                             width: 4.0,
                           ),
                         ),
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey,
-                          radius: 50.0,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 70, top: 70),
-                            child: FloatingActionButton(
-                              backgroundColor: Colors.white,
-                              onPressed: () {
-                                Navigator.pushNamed(context, StudentProfile.id);
-                              },
-                              child: Icon(
-                                Icons.add_a_photo,
-                                color: Colors.blueAccent,
-                                size: 17.0,
-                              ),
-                            ),
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.tealAccent,
                           ),
                         ),
                       ),
@@ -284,6 +318,8 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       buildSeeNotification(),
                       SizedBox(height: 15),
                       buildChatFeature(),
+                      SizedBox(height: 15),
+                      buildChooseCourse(),
                     ],
                   ),
                 ),
